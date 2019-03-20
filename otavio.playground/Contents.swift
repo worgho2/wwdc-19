@@ -16,6 +16,7 @@ class GameScene: SKScene {
     private var label_3: SKLabelNode!
     private var label_4: SKLabelNode!
     private var label_5: SKLabelNode!
+
     
     private var added: Bool = false
     private var stopped: Bool = false
@@ -47,7 +48,8 @@ class GameScene: SKScene {
         label_4.alpha = 0
         label_5.alpha = 0
         
-        setTextFont(fontName: "Optima")
+        
+        setTextFont(fontName: "Optima Bold")
         setTextSize(fontSize: 96)
         setBackgroundColor(color: UIColor.black)
         setTextColor(fontColor: UIColor.white)
@@ -58,33 +60,59 @@ class GameScene: SKScene {
 For better visual effects, use no more than 6 letters!
 */
         //setText(text: "nickname⭐️")
-        setText(text: /*#-editable-code type your nickname here*/"🀀❖✰"/*#-end-editable-code*/)
+        setText(text: /*#-editable-code type your nickname here*/""/*#-end-editable-code*/)
     
 //#-hidden-code
         label2.text = "🇱🇷  🇧🇷"
-        label2.color = UIColor.green
         label2.fontSize = 100
         
         label3.text = "🕛"
-        label2.color = UIColor.red
         label3.fontSize = 65
     }
+    
+    func touchDown(atPoint pos : CGPoint) {
+        self.label.run(SKAction.scale(to: 1.5, duration: 0.2))
+        self.color = !self.color
+        self.scene?.run(SKAction.playSoundFileNamed("bop.mp3", waitForCompletion: true))
+        
+    }
+    
+    func touchMoved(toPoint pos : CGPoint) {
+    }
+    
+    func touchUp(atPoint pos : CGPoint) {
+        self.label.run(SKAction.scale(to: 1.0, duration: 0.1))
+        self.label.run(SKAction.colorize(with: UIColor.white, colorBlendFactor: 1, duration: 5))
+        self.color = !self.color
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for t in touches { touchDown(atPoint: t.location(in: self)) }
+    }
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for t in touches { touchMoved(toPoint: t.location(in: self)) }
+    }
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for t in touches { touchUp(atPoint: t.location(in: self)) }
+    }
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for t in touches { touchUp(atPoint: t.location(in: self)) }
+    }
+    
  
     func stopRotation () {
-        Timer.scheduledTimer(withTimeInterval: 6, repeats: false, block: {(timer) in
+        Timer.scheduledTimer(withTimeInterval: 16, repeats: false, block: {(timer) in
             self.label_1.text = "Enjoy"
             self.label_1.run(SKAction.fadeIn(withDuration: 2))
         })
-        Timer.scheduledTimer(withTimeInterval: 7, repeats: false, block: {(timer) in
-            self.color = !self.color
+        Timer.scheduledTimer(withTimeInterval: 17, repeats: false, block: {(timer) in
             self.label_1.run(SKAction.fadeOut(withDuration: 2))
         })
-        Timer.scheduledTimer(withTimeInterval: 29, repeats: false, block: {(timer) in
+        Timer.scheduledTimer(withTimeInterval: 59, repeats: false, block: {(timer) in
             self.label.run(SKAction.fadeAlpha(to: 0.4, duration: 2))
             self.label.run(SKAction.scale(to: 0.5, duration: 2))
         })
-        Timer.scheduledTimer(withTimeInterval: 30, repeats: false, block: {(timer) in
-            self.label_1.text = "Did you liked?"
+        Timer.scheduledTimer(withTimeInterval: 60, repeats: false, block: {(timer) in
+            self.label_1.text = "Did you like it?"
             self.label_1.run(SKAction.fadeIn(withDuration: 1))
             self.label_2.run(SKAction.fadeIn(withDuration: 1))
             self.label_3.run(SKAction.fadeIn(withDuration: 2))
@@ -123,7 +151,7 @@ For better visual effects, use no more than 6 letters!
             self.label.run(SKAction.scale(to: 10, duration: 15))
         })
         Timer.scheduledTimer(withTimeInterval: 5, repeats: false, block: {(timer) in
-            self.label_2.text = "Now is your time!"
+            self.label_2.text = "Now it`s your turn!"
             self.label_3.text = "★"
             self.label_3.run(SKAction.scale(to: 1.5, duration: 3))
             self.label_2.run(SKAction.fadeIn(withDuration: 5))
@@ -149,7 +177,7 @@ For better visual effects, use no more than 6 letters!
                 self.label.run(SKAction.colorize(with: UIColor(red: .random(in: 0...1),
                                                                green: .random(in: 0...1),
                                                                blue: .random(in: 0...1),
-                                                               alpha: 1.0), colorBlendFactor: 0.3, duration: 0.02))
+                                                               alpha: 1.0), colorBlendFactor: 0.5, duration: 0.02))
             }
         } else {
             self.label_3.run(SKAction.colorize(with: UIColor(red: .random(in: 0...1),
@@ -162,7 +190,7 @@ For better visual effects, use no more than 6 letters!
 }
 
 // Load the SKScene from 'GameScene.sks'
-let sceneView = SKView(frame: CGRect(x:0 , y:0, width: 1024, height: 768))
+let sceneView = SKView(frame: CGRect(x:0 , y:0, width: 512, height: 768))
 if let scene = GameScene(fileNamed: "GameScene") {
     // Set the scale mode to scale to fit the window
     scene.scaleMode = .aspectFill
