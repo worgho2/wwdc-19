@@ -61,16 +61,16 @@ public class GameScene: SKScene {
         setTextSize(fontSize: 96)
         setBackgroundColor(color: UIColor.black)
         setTextColor(fontColor: UIColor.white)
-//#-end-hidden-code
-/*:
-
-* Callout(Type your nickname plus one emoji):
-For better visual effects, use no more than 5 letters!
-*/
-//setText(text: "nickname⭐️")
-setText(text: /*#-editable-code type your nickname here*/""/*#-end-editable-code*/)
-
-//#-hidden-code
+        //#-end-hidden-code
+        /*:
+         
+         * Callout(Type your nickname plus one emoji):
+         For better visual effects, use no more than 6 letters!
+         */
+        //setText(text: "nickname⭐️")
+        setText(text: /*#-editable-code type your nickname here*/"sss"/*#-end-editable-code*/)
+        
+        //#-hidden-code
         label2.text = "🇱🇷  🇧🇷"
         label2.fontSize = 100
         
@@ -82,36 +82,43 @@ setText(text: /*#-editable-code type your nickname here*/""/*#-end-editable-code
         self.color = !self.color
         self.label.run(SKAction.scale(to: 1.5, duration: 0.2))
         
-        hori = Int.random(in: -216...216)
-        vert = Int.random(in: -344...344)
-        vertVel = Double.random(in: 0.5...1)
-        horiVel = Double.random(in: 0.5...1)
+        hori = Int.random(in: -256...256)
+        vert = Int.random(in: -384...384)
+        
+        vertVel = Double.random(in: 0.5...2)
+        horiVel = Double.random(in: 0.5...2)
         
         self.labelNode.run(SKAction.moveTo(x: CGFloat(hori), duration: horiVel))
         self.labelNode.run(SKAction.moveTo(y: CGFloat(vert), duration: vertVel))
         
         hori = Int.random(in: -50...50)
         vert = Int.random(in: -50...50)
-        vertVel = Double.random(in: 0.2...1)
-        horiVel = Double.random(in: 0.2...1)
+        
+        vertVel = Double.random(in: 0.5...2)
+        horiVel = Double.random(in: 0.5...2)
         
         self.label.run(SKAction.moveTo(x: CGFloat(hori), duration: horiVel))
         self.label.run(SKAction.moveTo(y: CGFloat(vert), duration: vertVel))
         
-        Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false, block: {(timer) in
-            self.label.run(SKAction.scale(to: 1.0, duration: 0.1))
-            self.label.run(SKAction.colorize(with: UIColor.white, colorBlendFactor: 1, duration: 5))
-        })
         
         self.scene?.run(SKAction.playSoundFileNamed("bop3.mp3", waitForCompletion: true))
         
+        Timer.scheduledTimer(withTimeInterval: 0.4, repeats: false, block: {(timer) in
+            self.label.run(SKAction.scale(to: 1.0, duration: 0.1))
+            self.label.run(SKAction.colorize(with: UIColor.white, colorBlendFactor: 1, duration: 5))
+        })
     }
+    
     func touchMoved(toPoint pos : CGPoint) {
-        self.label.run(SKAction.pause())
+        self.labelNode.run(SKAction.moveTo(x: 0, duration: 1))
+        self.labelNode.run(SKAction.moveTo(y: 0, duration: 1))
         self.label.run(SKAction.moveTo(x: 0, duration: 1.5))
         self.label.run(SKAction.moveTo(y: 0, duration: 1.5))
     }
+    
     func touchUp(atPoint pos : CGPoint) {
+        self.label.run(SKAction.scale(to: 1.0, duration: 0.1))
+        self.label.run(SKAction.colorize(with: UIColor.white, colorBlendFactor: 1, duration: 5))
         self.color = !self.color
     }
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -186,9 +193,8 @@ setText(text: /*#-editable-code type your nickname here*/""/*#-end-editable-code
             self.label.run(SKAction.scale(to: 10, duration: 15))
         })
         Timer.scheduledTimer(withTimeInterval: 5, repeats: false, block: {(timer) in
-            self.label_2.text = "Now give your special touch"
-            self.label_3.run(SKAction.scale(to: 1.5, duration: 5))
-            self.label_3.text = "o"//★
+            self.label_2.text = "Now it`s your turn!"
+            self.label_3.text = "★"
             self.label_3.run(SKAction.scale(to: 1.5, duration: 3))
             self.label_2.run(SKAction.fadeIn(withDuration: 5))
             self.label_3.run(SKAction.fadeIn(withDuration: 7))
@@ -221,10 +227,10 @@ setText(text: /*#-editable-code type your nickname here*/""/*#-end-editable-code
                                                              green: .random(in: 0...1),
                                                              blue: .random(in: 0...1),
                                                              alpha: 1.0), colorBlendFactor: 1, duration: 0.1))
-            self.label_3.run(SKAction.rotate(byAngle: 2, duration: 60))
         }
         self.labelNode.run(SKAction.rotate(byAngle: 1, duration: 60))
         self.label.run(SKAction.rotate(byAngle: 2.3, duration: 60))
+        
     }
 }
 
