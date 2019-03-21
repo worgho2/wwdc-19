@@ -103,7 +103,7 @@ setText(text: /*#-editable-code type your nickname here*/""/*#-end-editable-code
             self.label.run(SKAction.colorize(with: UIColor.white, colorBlendFactor: 1, duration: 5))
         })
         
-        self.scene?.run(SKAction.playSoundFileNamed("bop3.mp3", waitForCompletion: true))
+        self.scene?.run(SKAction.playSoundFileNamed("bop3.mp3", waitForCompletion: true)) //Additional sound effects from www.zapsplat.com
         
     }
     func touchMoved(toPoint pos : CGPoint) {
@@ -204,7 +204,7 @@ setText(text: /*#-editable-code type your nickname here*/""/*#-end-editable-code
             if !self.stopped {
                 self.stopRotation()
                 self.stopped = !self.stopped
-                self.scene?.run(SKAction.playSoundFileNamed("bensound-house.mp3", waitForCompletion: true))
+                self.scene?.run(SKAction.playSoundFileNamed("bensound-house.mp3", waitForCompletion: true)) //Royalty Free Music from Bensound
             }
             if self.added {
                 self.label2.run(SKAction.rotate(byAngle: 5, duration: 60))
