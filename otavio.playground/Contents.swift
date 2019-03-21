@@ -63,12 +63,11 @@ public class GameScene: SKScene {
         setTextColor(fontColor: UIColor.white)
 //#-end-hidden-code
 /*:
-
 * Callout(Type your nickname plus one emoji):
-For better visual effects, use no more than 5 letters!
+For better visual effects, use no more than 6 letters!
 */
 //setText(text: "nickname⭐️")
-setText(text: /*#-editable-code type your nickname here*/"sss"/*#-end-editable-code*/)
+setText(text: /*#-editable-code type your nickname here*/""/*#-end-editable-code*/)
 
 //#-hidden-code
         label2.text = "🇱🇷  🇧🇷"
