@@ -55,12 +55,12 @@ class GameScene: SKScene {
             self.canCallSpin = !self.canCallSpin
         }
         if self.startSpin { self.label1.run(SKAction.rotate(byAngle: 3, duration: 60)) }
-    
+        
         self.label2.run(SKAction.rotate(byAngle: 2, duration: 60))
         self.label2.run(SKAction.colorize(with: UIColor(red: .random(in: 0...1),
-                                                       green: .random(in: 0...1),
-                                                       blue: .random(in: 0...1),
-                                                       alpha: 1.0), colorBlendFactor: 0.7, duration: 0.02))
+                                                        green: .random(in: 0...1),
+                                                        blue: .random(in: 0...1),
+                                                        alpha: 1.0), colorBlendFactor: 0.7, duration: 0.02))
     }
 }
 

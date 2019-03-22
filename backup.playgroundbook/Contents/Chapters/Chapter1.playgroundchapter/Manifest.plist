@@ -5,11 +5,10 @@
 	<key>Version</key>
 	<string>1.0</string>
 	<key>Name</key>
-	<string>Crazy effects</string>
+	<string>NOME_DO_CAPITULO</string>
 	<key>Pages</key>
 	<array>
 		<string>Page1.playgroundpage</string>
-		<string>Page2.playgroundpage</string>
 	</array>
 </dict>
 </plist>

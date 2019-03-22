@@ -65,9 +65,9 @@ public class GameScene: SKScene {
 /*:
 
 * Callout(Type your nickname plus one emoji):
-For better visual effects, use no more than 7 letters!
+For better visual effects, use no more than 5 letters!
 */
-//setText(text: "nick⭐️")
+//setText(text: "nickname⭐️")
 setText(text: /*#-editable-code type your nickname here*/""/*#-end-editable-code*/)
 
 //#-hidden-code
@@ -192,7 +192,6 @@ setText(text: /*#-editable-code type your nickname here*/""/*#-end-editable-code
             self.label_3.run(SKAction.scale(to: 1.5, duration: 3))
             self.label_2.run(SKAction.fadeIn(withDuration: 5))
             self.label_3.run(SKAction.fadeIn(withDuration: 7))
-            PlaygroundPage.current.assessmentStatus = .pass(message: "**Great** job! [next](@next)")
             self.finished = !self.finished
         })
         self.label.run(SKAction.fadeOut(withDuration: 5))
@@ -239,5 +238,5 @@ PlaygroundSupport.PlaygroundPage.current.liveView = sceneView
 //#-end-hidden-code
 /*:
  **It`s time to create your own!** [LABORATORY](@next)
-*/
+ */
 

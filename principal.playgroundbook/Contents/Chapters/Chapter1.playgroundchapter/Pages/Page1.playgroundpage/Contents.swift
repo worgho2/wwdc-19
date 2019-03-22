@@ -1,7 +1,4 @@
-/*:
- # HELLO! It`s about 60 seconds of visual effects
- */
-//:
+//: # Hello, nice to meet you! First, could you introduce yourself by writing your nickname in the field bellow?
 //#-hidden-code
 import PlaygroundSupport
 import SpriteKit
@@ -57,18 +54,28 @@ public class GameScene: SKScene {
         label_4.alpha = 0
         label_5.alpha = 0
         
-        setTextFont(fontName: "Optima Bold")
+        label2.fontName = "lucida console"
+        label3.fontName = "lucida console"
+        label_1.fontName = "lucida console"
+        label_2.fontName = "lucida console"
+        label_3.fontName = "lucida console"
+        label_4.fontName = "lucida console"
+        label_5.fontName = "lucida consoless"
+        
+        setTextFont(fontName: "Lucida console Bold")
         setTextSize(fontSize: 96)
         setBackgroundColor(color: UIColor.black)
         setTextColor(fontColor: UIColor.white)
 //#-end-hidden-code
-/*:
-
-* Callout(Type your nickname plus one emoji):
-For better visual effects, use no more than 5 letters!
-*/
+        
 //setText(text: "nickname⭐️")
-setText(text: /*#-editable-code type your nickname here*/""/*#-end-editable-code*/)
+        
+setText(text: /*#-editable-code Type your nickname here*/""/*#-end-editable-code*/)
+        
+/*:
+* Callout(Type your nickname plus one emoji):
+For better visual effects, try to use no more than 7 letters!
+*/
 
 //#-hidden-code
         label2.text = "🇱🇷  🇧🇷"
@@ -186,12 +193,13 @@ setText(text: /*#-editable-code type your nickname here*/""/*#-end-editable-code
             self.label.run(SKAction.scale(to: 10, duration: 15))
         })
         Timer.scheduledTimer(withTimeInterval: 5, repeats: false, block: {(timer) in
-            self.label_2.text = "Now give your special touch"
+            self.label_2.text = "Meanings are driven by the intensity"
             self.label_3.run(SKAction.scale(to: 1.5, duration: 5))
             self.label_3.text = "o"//★
             self.label_3.run(SKAction.scale(to: 1.5, duration: 3))
             self.label_2.run(SKAction.fadeIn(withDuration: 5))
             self.label_3.run(SKAction.fadeIn(withDuration: 7))
+            PlaygroundPage.current.assessmentStatus = .pass(message: "**GREAT! Now you can experience the effect with several of them: ** [LET'S GO TO THE CROWD](@next)")
             self.finished = !self.finished
         })
         self.label.run(SKAction.fadeOut(withDuration: 5))
@@ -236,7 +244,3 @@ if let scene = GameScene(fileNamed: "GameScene") {
 
 PlaygroundSupport.PlaygroundPage.current.liveView = sceneView
 //#-end-hidden-code
-/*:
- **It`s time to create your own!** [LABORATORY](@next)
- */
-

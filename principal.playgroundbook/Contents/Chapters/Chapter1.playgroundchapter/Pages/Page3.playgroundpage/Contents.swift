@@ -96,6 +96,7 @@ public class GameScene: SKScene {
 /*:
 * Callout(You can try some examples too):
 But creating is more exciting!
+         
 */
 
 //Number of spitros
@@ -108,15 +109,16 @@ numberOfSpitros = /*#-editable-code Number Of Spitros*/5/*#-end-editable-code*/
         if spitros.count <= self.numberOfSpitros {
 //#-end-hidden-code
 //Preferences
-let newSpitro: Spitro = Spitro(fontColor: /*#-editable-code Text Color*/#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)/*#-end-editable-code*/,
-"/*#-end-editable-code*/,
-                         textFont: /*#-editable-code Text Font*/"Optima"/*#-end-editable-code*/,
-                         transparency: /*#-editable-code Font Transparency*/1.0/*#-end-editable-code*/,
-                         textFontSize: /*#-editable-code Font Size*/60/*#-end-editable-code*/,
-                         rotationSpeed: /*#-editable-code Spitro Rotation Speed*/5/*#-end-editable-code*/,
-                         orbitalSpeed: /*#-editable-code Spitros's orbital*/8/*#-end-editable-code*/,
-                         allowColorChange: /*#-editable-code type your nickname here*/true/*#-end-editable-code*/,
-                         blendFactor: /*#-editable-code type your nickname here*/0.9/*#-end-editable-code*/)
+let newSpitro =
+Spitro(fontColor: /*#-editable-code Text Color*/#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)/*#-end-editable-code*/,
+text: /*#-editable-code type Text Seed*/"🎒🕸🌎℞"/*#-end-editable-code*/,
+textFont: /*#-editable-code Text Font*/"Optima"/*#-end-editable-code*/,
+transparency: /*#-editable-code Font Transparency*/1.0/*#-end-editable-code*/,
+textFontSize: /*#-editable-code Font Size*/60/*#-end-editable-code*/,
+rotationSpeed: /*#-editable-code Spitro Rotation Speed*/5/*#-end-editable-code*/,
+orbitalSpeed: /*#-editable-code Spitros's orbital*/8/*#-end-editable-code*/,
+allowColorChange: /*#-editable-code type your nickname here*/true/*#-end-editable-code*/,
+blendFactor: /*#-editable-code type your nickname here*/0.9/*#-end-editable-code*/)
 //#-hidden-code
             newSpitro.position = pos
             addChild(newSpitro)

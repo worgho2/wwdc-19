@@ -67,7 +67,7 @@ public class GameScene: SKScene {
 For better visual effects, use no more than 6 letters!
 */
 //setText(text: "nickname⭐️")
-setText(text: /*#-editable-code type your nickname here*/""/*#-end-editable-code*/)
+setText(text: /*#-editable-code type your nickname here*/"m "/*#-end-editable-code*/)
 
 //#-hidden-code
         label2.text = "🇱🇷  🇧🇷"

@@ -5,9 +5,9 @@
 	<key>Version</key>
 	<string>1.0</string>
 	<key>Name</key>
-	<string>Crowd</string>
+	<string>NOME_DA_PAGINA</string>
 	<key>Description</key>
-	<string>Here you can personalize more things and create much more spitros</string>
+	<string>DESCRICAO_DA_PAGINA</string>
 	<key>LiveViewMode</key>
 	<string>VisibleByDefault</string>
 </dict>

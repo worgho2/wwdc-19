@@ -11,9 +11,9 @@
 	<key>ContentVersion</key>
 	<string>1.0</string>
 	<key>Name</key>
-	<string>Spitro</string>
+	<string>NOME_DO_SEU_PROJETO</string>
 	<key>Description</key>
-	<string>Stroboscopic effect</string>
+	<string>DESCRICAO_DO_PROJETO</string>
 	<key>ContentIdentifier</key>
 	<string>com.nomedoseuprojeto</string>
 	<key>DeploymentTarget</key>
