@@ -35,7 +35,7 @@ class GameScene: SKScene {
             self.canCallSpin = !self.canCallSpin
         }
         if self.startSpin { self.label1.run(SKAction.rotate(byAngle: 2.3, duration: 60)) }
-    
+        
     }
 }
 
