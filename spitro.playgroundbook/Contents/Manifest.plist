@@ -11,13 +11,15 @@
 	<key>ContentVersion</key>
 	<string>1.0</string>
 	<key>Name</key>
-	<string>Spitro</string>
+	<string>SPITRO</string>
 	<key>Description</key>
 	<string>Stroboscopic effect</string>
 	<key>ContentIdentifier</key>
 	<string>com.nomedoseuprojeto</string>
 	<key>DeploymentTarget</key>
 	<string>ios10.3</string>
+	<key>ImageReference</key>
+	<string>logo.png</string>
 	<key>Chapters</key>
 	<array>
 		<string>Chapter1.playgroundchapter</string>
