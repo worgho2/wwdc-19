@@ -1,13 +1,62 @@
 /*:
- # THE LABORATORY
- Here you can customize your experience as you like
- */
+# Now that you know basically what elements we are interacting with.
+It's time to customize Spitro's creation parameters and observe that even if they're made of the same principles the collective is especially unpredictable.
+ 
+-----
+**When touching the screen, the spitros will be moved randomly, ass well as their orbits.**
+ 
+**When sliding the screen, the spitro's orbit will become 0.**
+
+**fontColor:**
+- You can double tap the color square and choose another one
+
+**text:**
+- The text can contain 🤠👍👨‍💻 too.
+
+**textFont:**
+- "lucida console"
+- "Georgia"
+- "Futura"
+- "Gil Sans"
+- "Zapfino"
+- "Marker Felt"
+- "Herculanum"
+- "Arial"
+- "Impact"
+- "Comic Sans MS"
+- ...
+
+**ansparency:**
+- Define how transparent your text will be.
+- 0.0 to 1.0
+
+**textFontSize:**
+- Define how large your text will be.
+- 9 to 288
+
+**rotationSpeed:**
+- Define how fast your text will rotate.
+- 0.0 to 15.0
+
+**orbitalSpeed:**
+- Define how fast the orbit of your text will rotate.
+- 0.0 to 15.0
+
+**allowColorChange:**
+- Define if the text will change the color when touched
+- [true , false]
+
+**blendFactor:**
+- Define how transparent the color will be.
+- 0.0 to 1.0
+*/
+
 //#-hidden-code
 import PlaygroundSupport
 import SpriteKit
 
 public class Spitro : SKNode {
-
+    
     private var label = SKLabelNode()
     
     private var horizontalPos: Double = 0.0
@@ -58,7 +107,7 @@ public class Spitro : SKNode {
         self.label.run(SKAction.moveTo(x: self.getHorizontalPos()/6, duration: .random(in: 0.5...1)))
         self.label.run(SKAction.moveTo(y: self.getVerticalPos()/6, duration: .random(in: 0.5...1)))
     }
-
+    
     public func touchMoved() {
         self.label.run(SKAction.colorize(with: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), colorBlendFactor: 1.0, duration: .random(in: 1...5)))
         self.label.run(SKAction.moveTo(x: 0, duration: 1.5))
@@ -90,35 +139,31 @@ public class GameScene: SKScene {
     private var canPlaySong: Bool = true
     
     private var numberOfSpitros: Int = 0
-
+    
+    private var canEndOfApplication: Bool = true
+    
     override public func didMove(to view: SKView) {
 //#-end-hidden-code
-/*:
-* Callout(You can try some examples too):
-But creating is more exciting!
-         
-*/
-
-//Number of spitros
-numberOfSpitros = /*#-editable-code Number Of Spitros*/5/*#-end-editable-code*/
+numberOfSpitros = /*#-editable-code Number Of Spitros [integer]*/5/*#-end-editable-code*/
 //#-hidden-code
     }
     
     func touchDown(atPoint pos : CGPoint) {
         self.scene?.run(SKAction.playSoundFileNamed("bop3.mp3", waitForCompletion: true))
-        if spitros.count <= self.numberOfSpitros {
+        if spitros.count <= self.numberOfSpitros && spitros.count <= 25{
+            
+            let newSpitro = Spitro(
 //#-end-hidden-code
-//Preferences
-let newSpitro =
-Spitro(fontColor: /*#-editable-code Text Color*/#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)/*#-end-editable-code*/,
-text: /*#-editable-code type Text Seed*/"🎒🕸🌎℞"/*#-end-editable-code*/,
-textFont: /*#-editable-code Text Font*/"Optima"/*#-end-editable-code*/,
-transparency: /*#-editable-code Font Transparency*/1.0/*#-end-editable-code*/,
-textFontSize: /*#-editable-code Font Size*/60/*#-end-editable-code*/,
-rotationSpeed: /*#-editable-code Spitro Rotation Speed*/5/*#-end-editable-code*/,
-orbitalSpeed: /*#-editable-code Spitros's orbital*/8/*#-end-editable-code*/,
-allowColorChange: /*#-editable-code type your nickname here*/true/*#-end-editable-code*/,
-blendFactor: /*#-editable-code type your nickname here*/0.9/*#-end-editable-code*/)
+fontColor: /*#-editable-code Text Color*/#colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)/*#-end-editable-code*/,
+text: /*#-editable-code type Text*/";l🕸-.?"/*#-end-editable-code*/,
+textFont: /*#-editable-code Text Font*/"lucida console"/*#-end-editable-code*/,
+transparency: /*#-editable-code Font Transparency [0.0 , 1.0]*/1.0/*#-end-editable-code*/,
+textFontSize: /*#-editable-code Font Size [integer]*/60/*#-end-editable-code*/,
+rotationSpeed: /*#-editable-code Spitro's Rotation Speed*/5.0/*#-end-editable-code*/,
+orbitalSpeed: /*#-editable-code Spitros's Orbital Speed*/8.0/*#-end-editable-code*/,
+allowColorChange: /*#-editable-code Allow Color Change[true , false]*/true/*#-end-editable-code*/,
+blendFactor: /*#-editable-code Color Transparency [0.0 , 1.0]*/0.9/*#-end-editable-code*/)
+//:
 //#-hidden-code
             newSpitro.position = pos
             addChild(newSpitro)
@@ -127,6 +172,12 @@ blendFactor: /*#-editable-code type your nickname here*/0.9/*#-end-editable-code
         
         self.canChangeColor = true
         for i in spitros { i.touchDown() }
+    }
+    
+    public func endApplication () {
+        Timer.scheduledTimer(withTimeInterval: 30, repeats: false, block: {(timer) in
+            PlaygroundPage.current.assessmentStatus = .pass(message: "**NICE!** To understand how all this is possible see [A LITTLE MORE ABOUT PHYSICS](@next)")
+        })
     }
     
     func touchMoved(toPoint pos : CGPoint) {
@@ -156,10 +207,15 @@ blendFactor: /*#-editable-code type your nickname here*/0.9/*#-end-editable-code
             self.canPlaySong = !self.canPlaySong
         }
         
+        if self.canEndOfApplication {
+            self.endApplication()
+            self.canEndOfApplication = !self.canEndOfApplication
+        }
+        
         if self.canChangeColor { for i in spitros { i.changeColor() } }
         
         for i in spitros { i.rotate() }
-    
+        
     }
 }
 
@@ -170,5 +226,3 @@ if let scene = GameScene(fileNamed: "GameScene") {
 }
 PlaygroundSupport.PlaygroundPage.current.liveView = sceneView
 //#-end-hidden-code
-//: **It`s All**
-

@@ -193,13 +193,14 @@ For better visual effects, try to use no more than 7 letters!
             self.label.run(SKAction.scale(to: 10, duration: 15))
         })
         Timer.scheduledTimer(withTimeInterval: 5, repeats: false, block: {(timer) in
+            self.label_2.run(SKAction.scale(to: 0.7, duration: 1))
             self.label_2.text = "Meanings are driven by the intensity"
             self.label_3.run(SKAction.scale(to: 1.5, duration: 5))
             self.label_3.text = "o"//★
             self.label_3.run(SKAction.scale(to: 1.5, duration: 3))
             self.label_2.run(SKAction.fadeIn(withDuration: 5))
             self.label_3.run(SKAction.fadeIn(withDuration: 7))
-            PlaygroundPage.current.assessmentStatus = .pass(message: "**GREAT! Now you can experience the effect with several of them: ** [LET'S GO TO THE CROWD](@next)")
+            PlaygroundPage.current.assessmentStatus = .pass(message: "**GREAT!** Now you can experience the effect with several of them: [LET'S GO TO THE CROWD](@next)")
             self.finished = !self.finished
         })
         self.label.run(SKAction.fadeOut(withDuration: 5))
