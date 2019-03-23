@@ -111,7 +111,7 @@ text: /*#-editable-code Text Color*/"}{?...?}{"/*#-end-editable-code*/,
 }
 
 let sceneView = SKView(frame: CGRect(x:0 , y:0, width: 512, height: 768))
-if let scene = GameScene(fileNamed: "GameScene") {
+if let scene = GameScene(fileNamed: "GameScene3") {
     scene.scaleMode = .aspectFill
     sceneView.presentScene(scene)
 }

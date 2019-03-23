@@ -150,13 +150,13 @@ numberOfSpitros = /*#-editable-code Number Of Spitros [integer]*/5/*#-end-editab
     }
     
     func touchDown(atPoint pos : CGPoint) {
-        self.scene?.run(SKAction.playSoundFileNamed("bop3.mp3", waitForCompletion: true))
+        self.scene?.run(SKAction.playSoundFileNamed("bop3.mp3", waitForCompletion: true)) //Additional sound effects from www.zapsplat.com
         if spitros.count <= self.numberOfSpitros && spitros.count <= 25{
             
             let newSpitro = Spitro(
 //#-end-hidden-code
 fontColor: /*#-editable-code Type Font Color Literal*/#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)/*#-end-editable-code*/,
-text: /*#-editable-code type Type Your Text*/""/*#-end-editable-code*/,
+text: /*#-editable-code Type Your Text*/""/*#-end-editable-code*/,
 textFont: /*#-editable-code Type Text Font*/"HelvetiCANEUE"/*#-end-editable-code*/,
 transparency: /*#-editable-code Type Font Transparency [0.0 , 1.0]*/1.0/*#-end-editable-code*/,
 textFontSize: /*#-editable-code Type Font Size [integer]*/60/*#-end-editable-code*/,
@@ -221,7 +221,7 @@ blendFactor: /*#-editable-code Type Color Transparency [0.0 , 1.0]*/0.9/*#-end-e
 }
 
 let sceneView = SKView(frame: CGRect(x:0 , y:0, width: 512, height: 768))
-if let scene = GameScene(fileNamed: "GameScene") {
+if let scene = GameScene(fileNamed: "GameScene2") {
     scene.scaleMode = .aspectFill
     sceneView.presentScene(scene)
 }
