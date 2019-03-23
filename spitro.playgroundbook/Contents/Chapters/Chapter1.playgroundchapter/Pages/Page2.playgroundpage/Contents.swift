@@ -155,15 +155,15 @@ numberOfSpitros = /*#-editable-code Number Of Spitros [integer]*/5/*#-end-editab
             
             let newSpitro = Spitro(
 //#-end-hidden-code
-fontColor: /*#-editable-code type Text*/#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)/*#-end-editable-code*/,
-text: /*#-editable-code type Text*/""/*#-end-editable-code*/,
-textFont: /*#-editable-code Text Font*/"HelvetiCANEUE"/*#-end-editable-code*/,
-transparency: /*#-editable-code Font Transparency [0.0 , 1.0]*/1.0/*#-end-editable-code*/,
-textFontSize: /*#-editable-code Font Size [integer]*/60/*#-end-editable-code*/,
-rotationSpeed: /*#-editable-code Spitro's Rotation Speed*/5.0/*#-end-editable-code*/,
-orbitalSpeed: /*#-editable-code Spitros's Orbital Speed*/8.0/*#-end-editable-code*/,
-allowColorChange: /*#-editable-code Allow Color Change[true , false]*/true/*#-end-editable-code*/,
-blendFactor: /*#-editable-code Color Transparency [0.0 , 1.0]*/0.9/*#-end-editable-code*/)
+fontColor: /*#-editable-code Type Font Color Literal*/#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)/*#-end-editable-code*/,
+text: /*#-editable-code type Type Your Text*/""/*#-end-editable-code*/,
+textFont: /*#-editable-code Type Text Font*/"HelvetiCANEUE"/*#-end-editable-code*/,
+transparency: /*#-editable-code Type Font Transparency [0.0 , 1.0]*/1.0/*#-end-editable-code*/,
+textFontSize: /*#-editable-code Type Font Size [integer]*/60/*#-end-editable-code*/,
+rotationSpeed: /*#-editable-code Type Spitro's Rotation Speed [0.0 , ...]*/5.0/*#-end-editable-code*/,
+orbitalSpeed: /*#-editable-code Type Spitros's Orbital Speed [0.0 , ...]*/8.0/*#-end-editable-code*/,
+allowColorChange: /*#-editable-code Type Allow Color Change[true , false]*/true/*#-end-editable-code*/,
+blendFactor: /*#-editable-code Type Color Transparency [0.0 , 1.0]*/0.9/*#-end-editable-code*/)
 //:
 //#-hidden-code
             newSpitro.position = pos
