@@ -177,7 +177,7 @@ blendFactor: /*#-editable-code Color Transparency [0.0 , 1.0]*/0.9/*#-end-editab
     
     public func endApplication () {
         Timer.scheduledTimer(withTimeInterval: 30, repeats: false, block: {(timer) in
-            PlaygroundPage.current.assessmentStatus = .pass(message: "**NICE!** To understand how all this is possible see [A LITTLE MORE ABOUT PHYSICS](@next)")
+            PlaygroundPage.current.assessmentStatus = .pass(message: "**NICE!** To understand how all this is possible, pause this execution and go to the next page")
         })
     }
     
