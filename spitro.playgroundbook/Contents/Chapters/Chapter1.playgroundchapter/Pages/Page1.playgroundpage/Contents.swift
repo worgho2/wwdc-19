@@ -136,18 +136,18 @@ For better visual effects, try to use no more than 7 letters!
     
     
     func stopRotation () {
-        Timer.scheduledTimer(withTimeInterval: 16, repeats: false, block: {(timer) in
+        Timer.scheduledTimer(withTimeInterval: 11, repeats: false, block: {(timer) in
             self.label_1.text = "Enjoy"
             self.label_1.run(SKAction.fadeIn(withDuration: 2))
         })
-        Timer.scheduledTimer(withTimeInterval: 17, repeats: false, block: {(timer) in
+        Timer.scheduledTimer(withTimeInterval: 12, repeats: false, block: {(timer) in
             self.label_1.run(SKAction.fadeOut(withDuration: 2))
         })
-        Timer.scheduledTimer(withTimeInterval: 59, repeats: false, block: {(timer) in
+        Timer.scheduledTimer(withTimeInterval: 44, repeats: false, block: {(timer) in
             self.label.run(SKAction.fadeAlpha(to: 0.4, duration: 2))
             self.label.run(SKAction.scale(to: 0.5, duration: 2))
         })
-        Timer.scheduledTimer(withTimeInterval: 60, repeats: false, block: {(timer) in
+        Timer.scheduledTimer(withTimeInterval: 45, repeats: false, block: {(timer) in
             self.label_1.text = "Did you like it?"
             
             self.labelNode.run(SKAction.moveTo(x: 0, duration: 1))
@@ -232,7 +232,7 @@ For better visual effects, try to use no more than 7 letters!
                                                              alpha: 1.0), colorBlendFactor: 1, duration: 0.1))
             self.label_3.run(SKAction.rotate(byAngle: 2, duration: 60))
         }
-        self.labelNode.run(SKAction.rotate(byAngle: 1, duration: 60))
+        self.labelNode.run(SKAction.rotate(byAngle: 1.5, duration: 60))
         self.label.run(SKAction.rotate(byAngle: 2.3, duration: 60))
     }
 }
