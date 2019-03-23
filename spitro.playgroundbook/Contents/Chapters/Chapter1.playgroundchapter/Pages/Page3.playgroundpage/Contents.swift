@@ -1,4 +1,4 @@
-//: # ESTROBOSCOPIC EFFECT
+//: # STROBOSCOPIC EFFECT
 //#-hidden-code
 import PlaygroundSupport
 import SpriteKit
@@ -118,5 +118,13 @@ if let scene = GameScene(fileNamed: "GameScene") {
 PlaygroundSupport.PlaygroundPage.current.liveView = sceneView
 //#-end-hidden-code
 /*:
- # EXPLANATION HERE
+The effect caused by the rotation of the words in this application is only possible because the device screen has a refresh rate of the images. This means that continuous motion is simulated by several frames that are shown rapidly in sequence. 
+
+And as the word is being accelerated circularly, its letters pass through the same place with a periodicity and depending on the relationship between the refresh rate and the word's speed rotation, the element appears to be stopped or rotating in the opposite direction, as you may have seen. It works a little bit like this:
+
+- speed < FPS : common movement
+- speed = FPS : stopped
+- speed > FPS : opossite movement
+
+**The current version of the iPad Pro has an update rate of 120 frames per second (FPS), but it's common for devices to have a refresh rate of 60fps.**
 */
